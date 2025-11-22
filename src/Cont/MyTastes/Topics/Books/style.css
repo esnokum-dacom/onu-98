@@ -1,0 +1,56 @@
+@import url("../../Style.css");
+
+:root {
+  --primary-color: #060605;
+  --secondary-color: #f5f5f5;
+
+  --line-wcolor: #060605;
+  --line-bcolor: #4f534b;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  scrollbar-width: none;
+  text-decoration: none;
+  font-family: "Win95";
+}
+
+body {
+  background: var(--primary-color);
+  place-content: center;
+  place-items: center;
+  height: 100vh;
+}
+
+#ContentAll {
+  width: 80%;
+}
+
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+input,
+textarea,
+label,
+p,
+select {
+  color: var(--secondary-color);
+  filter: blur(0.5px);
+}
+
+#ContainerAll {
+  width: 100%;
+}

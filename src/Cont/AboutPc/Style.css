@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "Win95";
+  src: url(../../Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Win98";
+  src: url(../../Props/Fonts/MSW98UI-Regular.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Pixie97";
+  src: url(../../Props/Fonts/ari-w9500.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "hibrid7";
+  src: url(../../Props/Fonts/BelanidiSerif-Regular.otf) format('opentype');
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Win95";
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #c8c8c8;
+  color: #fbffff;
+  padding: 2px;
+}
+
+#SepV {
+  width: 1px;
+  height: 100%;
+  background: #fbffff;
+  margin: 0 12px;
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 40px #ffffff;
+}
+
+#CdocAb {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 5px 10px;
+  text-align: center;
+  outline: solid 1px #fbffff;
+
+}
+
+#TItleR {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  outline: solid 1px #fbffff;
+  height: 40px;
+
+}
+
+a {
+  color: #101010;
+}
+
+/* GitHub */
+
+#Gith {
+  height: 100px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  outline: solid 1px #fbffff;
+}
+
+#Gith img {
+  width: 100px;
+}
+
+
+#Git-User_name {
+  width: 120px;
+}
+
+#Gith h1 {
+  font-size: 20px;
+}
+
+#infoC {
+  margin: 0 5px;
+  place-content: center;
+  place-items: center;
+}
+
+/* Abt */
+
+#Head {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  place-content: center;
+  place-items: center;
+}
+
+#Head img {
+  image-rendering: pixelated;
+}
+
+#Skills {
+  display: flex;
+  flex-direction: column;
+  color: #101010;
+}
+
+#PSkills {
+  display: flex;
+  flex-direction: column;
+}
+
+#PSkills button {
+  height: 80%;
+  width: calc(100% + 100px);
+  margin: 5px 0;
+  padding: 0 5px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  font-size: 18px;
+  background-color: #c8c8c8;
+  border: none;
+  background-color: #c8c8c8;
+  border-left: 3px solid #fbffff;
+  border-top: 3px solid #fbffff;
+  border-bottom: 3px solid #1a1a1a;
+  border-right: 3px solid #1a1a1a;
+  cursor: pointer;
+}
+
+#PSkills button:active {
+  border-left: 2px solid #1a1a1a;
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 3px solid #fbffff;
+  border-right: 3px solid #fbffff;
+}
+
+#Skills p {
+  display: flex;
+  font-size: 18px;
+  flex-direction: row;
+  place-items: center;
+  margin: 3px 0px;
+}
+
+#Skills p img {
+  margin-left: auto;
+  filter: brightness(100);
+}
+
+#Skills h1 {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+#Skills h3 {
+  text-align: center;
+  color: #808080;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}

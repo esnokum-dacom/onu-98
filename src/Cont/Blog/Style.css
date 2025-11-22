@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "Win95";
+  src: url(../../Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Win98";
+  src: url(../../Props/Fonts/MSW98UI-Regular.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Pixie97";
+  src: url(../..Props/Fonts/ari-w9500.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "hibrid7";
+  src: url(../../Props/Fonts/BelanidiSerif-Regular.otf) format('opentype');
+  font-weight: bold;
+}
+
+:root {
+  --primary-color: #e1e4bf;
+  --secondary-color: #fcffe0;
+  --third-color: #f0f3ca;
+  --fourth-color: #737b72;
+  --lineVck-color: #2c302b;
+
+  --line-wcolor: #d7dab9;
+  --line-bcolor: #4f534b;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  scrollbar-width: none;
+  text-decoration: none;
+}
+
+a {
+  color: #0a0a0a;
+}
+
+body {
+  height: 100vh;
+  padding: 10px;
+  place-items: center;
+  background-color: var(--primary-color);
+}
+
+#Container-BodyAMB {
+  width: 95%;
+}
+
+#BackExpl {
+  position: fixed;
+  width: 100%;
+  opacity: .8;
+  z-index: -1;
+  margin: -10px;
+}
+
+#ContainerAll {
+  display: flex;
+  place-items: center;
+  width: 600px;
+}
+
+#UserUpDc {
+  padding: 5px;
+  width: 180px;
+  background-color: var(--secondary-color);
+  border: none;
+  border-left: 3px solid var(--line-wcolor);
+  border-top: 3px solid var(--line-wcolor);
+  border-bottom: 3px solid var(--line-bcolor);
+  border-right: 3px solid var(--line-bcolor);
+}
+
+#Container-Center {
+  width: 100%;
+  font-family: "win98";
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  padding: 4px;
+}
+
+.Others {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  background-color: var(--third-color);
+  text-align: center;
+  padding: 5px 40px;
+  margin: 10px 5px 30px 15px;
+  outline: dashed .1px var(--lineVck-color);
+  outline-offset: 2px;
+}
+
+.CdocAb {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  background-color: var(--third-color);
+  padding: 5px 10px;
+  text-align: center;
+  margin: 10px 5px;
+  outline: dashed .1px var(--lineVck-color);
+  outline-offset: 2px;
+}
+
+.CdocAb h1 {
+  font-family: "hibrid7";
+}
+
+.CdocAb p {
+  margin: 5px 0;
+  color: var(--fourth-color);
+  font-family: "Win95";
+}
+
+.CdocAb h2 {
+  font-family: "hibrid7";
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--fourth-color);
+}
+
+.CdocAb b {
+  font-family: "Win95";
+}
+
+#SePR {
+  width: 20px;
+}
+
+.Bander {
+  background-color: var(--line-wcolor);
+  padding: 0 8px;
+  text-align: left;
+  margin: 8px 0;
+  outline: dashed .1px var(--fourth-color);
+  outline-offset: 2px;
+}
+
+#ContxBand {
+  width: calc(100% + 50px);
+  transform: translateX(-30px);
+}
+
+#TitleOth {
+  font-family: "hibrid7";
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--fourth-color);
+}
+
+#TextBander {
+  font-family: "hibrid7";
+  font-weight: 900;
+  color: var(--fourth-color);
+  width: calc(100% + 40px);
+  transform: translateX(-20px);
+}
+
+#CreateCW {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: none;
+  font-family: "hibrid7";
+  font-weight: 900;
+  color: var(--fourth-color);
+  cursor: pointer;
+}
+
+#CreateBl {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: none;
+  font-family: "hibrid7";
+  font-weight: 900;
+  color: var(--fourth-color);
+  cursor: pointer;
+}
+
+#IconMini {
+  width: 25px;
+  margin: 0 5px 0 0;
+  image-rendering: pixelated;
+  filter: saturate(1) brightness(100) opacity(1);
+}
+
+.Render-img {
+  width: 150px;
+  outline: dashed .1px var(--lineVck-color);
+  outline-offset: 2px;
+  image-rendering: pixelated;
+  filter: sepia(100%) saturate(1) brightness(0.95) opacity(1);
+}
+
+.bander {
+  background-color: var(--line-wcolor);
+  padding: 0 8px;
+  text-align: left;
+  margin: 8px 0;
+  outline: dashed .1px var(--fourth-color);
+  outline-offset: 2px;
+}
+
+#TTextBander {
+  font-family: "hibrid7";
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--fourth-color);
+  width: 20%;
+}
+
+.ContLeft {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  margin-right: auto;
+}
+
+.ContRig {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  margin: auto;
+}
+
+.eltodopoderoso {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  place-items: center;
+}
+
+.Thth {
+  width: 80%;
+}
