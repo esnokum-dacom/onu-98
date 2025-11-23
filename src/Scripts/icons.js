@@ -42,4 +42,4 @@ function mUp(e) {
   localStorage.setItem("IconBackPos", JSON.stringify(pos));
 }
 
-icon.addEventListener("dblclick", () => CreateWid(icon, "About Onu", "My pc.png", "./src/Cont/AboutPc/index.html", null, "330", "500"))
+icon.addEventListener("dblclick", () => CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500"))

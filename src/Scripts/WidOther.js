@@ -79,7 +79,7 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   win.appendChild(NavWindow);
 
   const explImgTab = document.createElement("img");
-  explImgTab.src = `./src/Props/Icons/${IconApp}`;
+  explImgTab.src = `/src/Props/Icons/${IconApp}`;
   explImgTab.className = "TbAppITb";
   NavWindow.appendChild(explImgTab);
 
@@ -102,12 +102,12 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
 
   const icX = document.createElement("img");
   icX.className = "IcInt";
-  icX.src = "./src/Props/Icons/ekis.png";
+  icX.src = "/src/Props/Icons/ekis.png";
   iconM.appendChild(icX);
 
   const icM = document.createElement("img");
   icM.className = "IcInt";
-  icM.src = "./src/Props/Icons/Mini.png";
+  icM.src = "/src/Props/Icons/Mini.png";
   iconC.appendChild(icM);
 
   function saveCurrentState() {
@@ -138,7 +138,7 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   TbBar.appendChild(TbWin);
 
   const explImg = document.createElement("img");
-  explImg.src = `./src/Props/Icons/${IconApp}`;
+  explImg.src = `/src/Props/Icons/${IconApp}`;
   explImg.className = "TbAppI";
   TbWin.appendChild(explImg);
 

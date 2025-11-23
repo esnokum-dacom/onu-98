@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Win95";
-  src: url(./src/Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
+  src: url(/src/Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
   font-weight: bold;
 }
 
