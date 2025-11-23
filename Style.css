@@ -229,8 +229,8 @@ body {
 #PanelTBM {
   position: absolute;
   margin: 0 5px;
-  top: 197px;
   width: 280px;
+  margin-top: -29%;
   height: 400px;
   background-color: #c8c8c8;
   border-left: 3px solid #fbffff;
