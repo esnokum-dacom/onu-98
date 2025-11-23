@@ -134,8 +134,15 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
 
   const TbWin = document.createElement("div");
   TbWin.className = "TbWin";
-  TbWin.dataset.id = windowId; // Usar mismo ID
+  TbWin.dataset.id = windowId;
   TbBar.appendChild(TbWin);
+
+  TbWin.addEventListener("contextmenu", (e) => {
+    e.preventDefault()
+    TbWin.remove();
+    win.remove()
+    WindowStorage.removeWindow(windowId);
+  })
 
   const explImg = document.createElement("img");
   explImg.src = `/src/Props/Icons/${IconApp}`;
