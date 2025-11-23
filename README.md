@@ -13,5 +13,5 @@
 </div>
 
 <div align="center">
-  <a src="https://onu-98.vercel.app/">𝙼𝚢 𝚊𝚋𝚘𝚞𝚝 𝚖𝚎 𝚜𝚒𝚝𝚎</a>
+  <a href="https://onu-98.vercel.app/">𝙼𝚢 𝚊𝚋𝚘𝚞𝚝 𝚖𝚎 𝚜𝚒𝚝𝚎</a>
 </div>
