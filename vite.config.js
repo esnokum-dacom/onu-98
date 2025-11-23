@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  base: '/onu-98/', // Base path para GitHub Pages
   plugins: [
     viteStaticCopy({
       targets: [
