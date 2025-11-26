@@ -286,6 +286,7 @@ i .ContLeft {
 
   #Container-Center {
     place-content: center;
+    place-items: center;
     width: 100%;
   }
 
@@ -294,12 +295,6 @@ i .ContLeft {
   }
 
   #Container-BodyAMB {
-    width: 95%;
-  }
-}
-
-@media(max-width: 1200px) {
-  body {
-    width: max-content;
+    width: 90%;
   }
 }
