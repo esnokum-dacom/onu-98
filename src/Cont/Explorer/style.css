@@ -23,7 +23,7 @@
 }
 
 :root {
-  --primary-color: #e1e4bf;
+  --primary-color: #ffffff;
   --secondary-color: #fcffe0;
   --third-color: #f0f3ca;
   --fourth-color: #737b72;
@@ -43,8 +43,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  scrollbar-width: none;
   text-decoration: none;
+  scrollbar-color: #b5cff2 var(--primary-color);
+  scrollbar-width: thin;
 }
 
 a {
@@ -56,7 +57,10 @@ body {
   padding: 10px;
   place-items: center;
   background-color: var(--primary-color);
+  overflow: auto;
 }
+
+
 
 #BackExpl {
   position: fixed;
@@ -68,8 +72,8 @@ body {
 
 #ContainerAll {
   display: flex;
-  place-items: center;
-  width: 600px;
+  flex-direction: column;
+  width: 80%;
 }
 
 #UserUpDc {
@@ -96,7 +100,7 @@ body {
   display: flex;
   flex-direction: column;
   place-content: center;
-  width: 600px;
+  width: 100%;
   place-items: center;
   text-align: center;
   font-family: "win98";
@@ -106,20 +110,20 @@ body {
   font-family: "hibrid7";
 }
 
-#Fhead div {
-  position: absolute;
-  width: 60%;
-}
-
 #Fhead p {
   font-size: 20px;
+  color: #ffffff;
 }
 
 #ImgF {
-  z-index: -1;
+  background: url("/src/Props/images/First.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 98%;
+  height: 200px;
   outline: dashed .1px var(--lineVck-color);
   outline-offset: 2px;
+  place-content: center;
 }
 
 .Others {
@@ -330,8 +334,7 @@ body {
   font-weight: 900;
   font-size: 15px;
   color: var(--fourth-color);
-  width: calc(100% + 80px);
-  transform: translateX(-20px);
+  width: 100%;
 }
 
 #statuscafe-username a {
@@ -347,4 +350,14 @@ body {
   position: absolute;
   width: 150px;
   transform: translate(-95px, 5px);
+}
+
+@media (max-width: 380px) {
+  #Container-Center {
+    width: 720px;
+  }
+
+  #Fhead {
+    width: calc(80% + 250px);
+  }
 }

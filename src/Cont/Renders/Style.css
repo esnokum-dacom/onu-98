@@ -23,7 +23,7 @@
 }
 
 :root {
-  --primary-color: #e1e4bf;
+  --primary-color: #ffffff;
   --secondary-color: #fcffe0;
   --third-color: #f0f3ca;
   --fourth-color: #737b72;
@@ -59,6 +59,7 @@ body {
 
 #Container-BodyAMB {
   width: 95%;
+  place-items: center;
 }
 
 #BackExpl {
@@ -72,7 +73,7 @@ body {
 #ContainerAll {
   display: grid;
   place-items: center;
-  width: 600px;
+  width: 80%;
 }
 
 #UserUpDc {
@@ -122,9 +123,10 @@ body {
   place-content: center;
   place-items: center;
   background-color: var(--third-color);
-  padding: 5px 10px;
   text-align: center;
   margin: 10px 5px;
+  padding: 20px;
+  width: 95%;
   outline: dashed .1px var(--lineVck-color);
   outline-offset: 2px;
 }
@@ -152,14 +154,16 @@ body {
 .Bander {
   background-color: var(--line-wcolor);
   padding: 0 8px;
+  width: 90%;
+  margin: 5px 0;
   text-align: left;
   outline: dashed .1px var(--fourth-color);
   outline-offset: 2px;
+  z-index: 2;
 }
 
 #MyRD {
-  width: calc(100% + 380px);
-  transform: translateX(-190px);
+  width: calc(100%);
 }
 
 #ContxBand {
@@ -171,25 +175,47 @@ body {
   font-family: "hibrid7";
   font-size: 10px;
   font-weight: 900;
+  width: 90%;
   color: var(--fourth-color);
 }
 
 #TextBander {
   font-family: "hibrid7";
   font-weight: 900;
-  font-size: 20px;
+  font-size: 12px;
   color: var(--fourth-color);
-  width: calc(100% + 10px);
   text-align: center;
+  width: 100%;
 }
 
 #ImagesContainer {
   display: grid;
-  grid-template-columns: repeat(1, auto);
-  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(3, 320px);
+  grid-template-rows: repeat(3, 300px);
 }
 
 .Render-img {
-  width: 400px;
   margin: 8px 0;
+  width: 70%;
+}
+
+@media (max-width: 600px) {
+  #ContainerAll {
+    display: flex;
+    width: 90%;
+  }
+
+  #ImagesContainer {
+    grid-template-columns: repeat(1, 500px);
+    grid-template-rows: repeat(1, 500px);
+  }
+
+  .Render-img {
+    width: 100%;
+  }
+
+  #Container-Center {
+    width: 720px;
+  }
+
 }

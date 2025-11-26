@@ -1,5 +1,6 @@
 const WindoowsEmp = document.getElementById("Windows")
 const TbBar = document.getElementById("buttonsTB")
+const mq = window.matchMedia("(max-width: 390px)");
 
 let windowCount = 0
 
@@ -48,16 +49,35 @@ const WindowStorage = {
   }
 };
 
-export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData = null, Width, Height) {
+const styles = {
+  windowOn: 'NWindow',
+  windowOff: "NWindowOff",
+  windowInac: "NWindow",
+  windowMax: "NWindowMAX",
+  tBarOn: "NaWindowOn",
+  tBarOff: "NaWindowOff",
+  webOn: "abtWeb",
+  ButtonX: "IcNav",
+  ButtonM: "IcNav",
+  ButImgX: "IcInt",
+  ButImgM: "IcInt",
+  appTab: "TbWin"
+};
+
+export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData = null, Width, Height, cClass = {}) {
   let X = 0, Y = 0, SX = 0, SY = 0;
   const AppId = NameApp;
   windowCount++;
 
+  const ClassSt = {}
+  for (let key in styles) {
+    ClassSt[key] = cClass[key] || styles[key];
+  }
 
   const windowId = savedData?.id || `win_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
   const win = document.createElement("div");
-  win.className = "NWindow";
+  win.className = ClassSt.windowOn;
   win.style.width = `${Width}px`;
   win.style.height = `${Height}px`;
 
@@ -67,16 +87,25 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   win.style.top = initialY + "px";
 
   if (savedData?.minimized) {
-    win.classList.add("NWindowOff");
-    win.classList.remove("NWindow");
+    win.classList.add(ClassSt.windowOff);
+    win.classList.remove(ClassSt.windowOn);
+  }
+
+  if (savedData?.maximized) {
+    win.className = ClassSt.windowMax;
   }
 
   win.dataset.id = windowId;
   WindoowsEmp.appendChild(win);
 
   const NavWindow = document.createElement("div");
-  NavWindow.className = "NaWindowOn";
+  NavWindow.className = ClassSt.tBarOn;
   win.appendChild(NavWindow);
+
+  const PointerAr = document.createElement("div")
+  PointerAr.className = "ClickAreaOn"
+  PointerAr.id = "ClickOBJ"
+  win.appendChild(PointerAr)
 
   const explImgTab = document.createElement("img");
   explImgTab.src = `/src/Props/Icons/${IconApp}`;
@@ -93,20 +122,29 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   NavWindow.appendChild(NavCont);
 
   const iconC = document.createElement("button");
-  iconC.className = "IcNav";
+  iconC.className = ClassSt.ButtonX;
   NavCont.appendChild(iconC);
 
+  const IconMX = document.createElement("button")
+  IconMX.className = ClassSt.ButtonX
+  NavCont.appendChild(IconMX)
+
   const iconM = document.createElement("button");
-  iconM.className = "IcNav";
+  iconM.className = ClassSt.ButtonM;
   NavCont.appendChild(iconM);
 
   const icX = document.createElement("img");
-  icX.className = "IcInt";
+  icX.className = ClassSt.ButImgX;
   icX.src = "/src/Props/Icons/ekis.png";
   iconM.appendChild(icX);
 
+  const icMX = document.createElement("img")
+  icMX.className = ClassSt.ButImgM
+  icMX.src = "../../src/Props/Icons/Maximize.png"
+  IconMX.appendChild(icMX)
+
   const icM = document.createElement("img");
-  icM.className = "IcInt";
+  icM.className = ClassSt.ButImgM;
   icM.src = "/src/Props/Icons/Mini.png";
   iconC.appendChild(icM);
 
@@ -118,22 +156,28 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
       page: PageApp,
       width: Width,
       height: Height,
+      classes: ClassSt,
       x: parseInt(win.style.left),
       y: parseInt(win.style.top),
-      minimized: win.classList.contains("NWindowOff"),
-      zIndex: win.style.zIndex || 1
+      minimized: win.classList.contains(ClassSt.windowOff),
+      maximized: win.classList.contains(ClassSt.windowMax),
     };
+
     WindowStorage.saveWindow(windowData);
   }
 
-  icM.addEventListener("click", () => {
-    win.classList.remove("NWindow");
-    win.classList.add("NWindowOff");
+  let Minimiz = false
+  let maxim = false
+
+  iconC.addEventListener("click", () => {
+    Minimiz = true
+    win.className = ClassSt.windowOff;
     saveCurrentState();
+    console.log(Minimiz)
   });
 
   const TbWin = document.createElement("div");
-  TbWin.className = "TbWin";
+  TbWin.className = ClassSt.appTab;
   TbWin.dataset.id = windowId;
   TbBar.appendChild(TbWin);
 
@@ -154,35 +198,90 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   nWind.innerText = AppId;
   TbWin.appendChild(nWind);
 
-  icX.addEventListener("click", () => {
+  IconMX.addEventListener("click", () => {
+    if (win.className == ClassSt.windowMax) {
+      win.className = ClassSt.windowOn
+      maxim = false
+    }
+    else {
+      win.className = ClassSt.windowMax
+      maxim = true
+    }
+    saveCurrentState();
+  })
+
+  iconM.addEventListener("click", () => {
     win.remove();
     TbWin.remove();
     WindowStorage.removeWindow(windowId);
   });
 
   TbWin.addEventListener("click", () => {
-    if (win.classList.contains("NWindow") && NavWindow.classList.contains("NaWindowOn")) {
-      win.classList.remove("NWindow");
-      win.classList.add("NWindowOff");
+    if (win.classList.contains(ClassSt.windowOn) && NavWindow.classList.contains(ClassSt.tBarOn)) {
+      win.className = ClassSt.windowOff;
+      NavWindow.className = ClassSt.tBarOff
     }
-    else if (NavWindow.classList.contains("NaWindowOff") && win.classList.contains("NWindow")) {
-      focusWindow(win);
-      focusOnTab(NavWindow);
+    else if (win.classList.contains(ClassSt.windowInac)) {
+      win.className = ClassSt.windowOn;
+      NavWindow.className = ClassSt.tBarOn
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
     }
-    else if (win.classList.contains("NWindowOff")) {
-      win.classList.remove("NWindowOff");
-      win.classList.add("NWindow");
+    else if (NavWindow.classList.contains(ClassSt.tBarOff) && win.classList.contains(ClassSt.windowOn)) {
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
     }
+    else if (maxim == false && win.classList.contains(ClassSt.windowOff)) {
+      win.className = ClassSt.windowOn;
+      NavWindow.className = ClassSt.tBarOn
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+      maxim = false
+    }
+    else if (win.classList.contains(ClassSt.windowOn)) {
+      win.className = ClassSt.windowOff;
+      NavWindow.className = ClassSt.tBarOff
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+    }
+    else if (win.classList.contains(ClassSt.windowMax) && NavWindow.classList.contains(ClassSt.tBarOff)) {
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+    }
+    else if (maxim == true && win.classList.contains(ClassSt.windowMax)) {
+      win.className = ClassSt.windowOff;
+      NavWindow.className = ClassSt.tBarOff
+      maxim = true
+    }
+    else if (maxim == true && win.classList.contains(ClassSt.windowOff)) {
+      win.className = ClassSt.windowMax;
+      NavWindow.className = ClassSt.tBarOn
+    }
+    PointerAr.className = "ClickAreaOff";
     saveCurrentState();
   });
 
-  NavWindow.addEventListener("mousedown", StopM);
+  PointerAr.addEventListener("click", () => {
+    focusWindow(win, NavWindow, ClassSt, PointerAr);
+    if (win.classList.contains(ClassSt.windowInac) && NavWindow.classList.contains(ClassSt.tBarOn)) {
+      win.className = ClassSt.windowInac;
+      NavWindow.className = ClassSt.tBarOff
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+    }
+    else if (NavWindow.classList.contains(ClassSt.windowOff) && win.classList.contains(ClassSt.windowOn)) {
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+    }
+    else if (win.classList.contains(ClassSt.windowInac)) {
+      win.className = ClassSt.windowOn;
+      NavWindow.className = ClassSt.tBarOn
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
+    }
+    PointerAr.className = "ClickAreaOff";
+    saveCurrentState();
+  });
+
+  NavWindow.addEventListener("pointerdown", StopM);
 
   function StopM(e) {
     SX = e.clientX;
     SY = e.clientY;
-    document.addEventListener("mousemove", mMove);
-    document.addEventListener("mouseup", mUp);
+    document.addEventListener("pointermove", mMove);
+    document.addEventListener("pointerup", mUp);
   }
 
   function mMove(e) {
@@ -190,24 +289,26 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
     Y = SY - e.clientY;
     SX = e.clientX;
     SY = e.clientY;
-    win.style.top = (win.offsetTop - Y) + "px";
-    win.style.left = (win.offsetLeft - X) + "px";
+
+    win.className = ClassSt.windowOn
+
+    win.style.top = `${win.offsetTop - Y}px`;
+    win.style.left = `${win.offsetLeft - X}px`;
   }
 
   function mUp() {
-    document.removeEventListener("mousemove", mMove);
-    document.removeEventListener("mouseup", mUp);
+    document.removeEventListener("pointermove", mMove);
+    document.removeEventListener("pointerup", mUp);
     saveCurrentState();
   }
 
   win.addEventListener("mousedown", () => {
-    focusWindow(win);
-    focusOnTab(NavWindow);
+    focusWindow(win, NavWindow, ClassSt, PointerAr);
   });
 
   const webIfP = document.createElement("iframe");
   webIfP.src = PageApp;
-  webIfP.className = "abtWeb";
+  webIfP.className = ClassSt.webOn;
   win.appendChild(webIfP);
 
   saveCurrentState();
@@ -215,6 +316,17 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   if (!savedData) {
     saveCurrentState();
   }
+
+  function windowMQ(e) {
+    if (e.matches) {
+      win.className = ClassSt.windowMax
+      maxim = true
+    }
+  }
+
+  windowMQ(mq)
+
+  focusWindow(win, NavWindow, ClassSt, PointerAr);
 
   return windowId;
 }
@@ -230,7 +342,8 @@ function restoreWindows() {
       windowData.page,
       windowData,
       windowData.width,
-      windowData.height
+      windowData.height,
+      windowData.classes
     );
   });
 }
@@ -240,23 +353,37 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.CreateWid = CreateWid;
 
-export { WindowStorage, restoreWindows };
+export { WindowStorage, restoreWindows, styles };
 
 const windows = WindowStorage.loadAll();
 console.log('Ventanas guardadas:', windows);
 
-function focusWindow(win) {
-  document.querySelectorAll(".NWindow").forEach(w => {
-    w.style.zIndex = "0"
-  })
-  win.style.zIndex = "10"
-}
+function focusWindow(win, navWin, ClassSt, pointerAr) {
+  let maxZIndex = 0;
+  document.querySelectorAll('.' + ClassSt.windowOn + ', .' + ClassSt.windowInac + ', .' + ClassSt.windowMax)
+    .forEach(w => {
+      const currentZIndex = parseInt(w.style.zIndex) || 0;
+      if (currentZIndex > maxZIndex) {
+        maxZIndex = currentZIndex;
+      }
 
-function focusOnTab(NavWindow) {
-  document.querySelectorAll(".NaWindowOn").forEach(w => {
-    w.classList.remove("NaWindowOn")
-    w.classList.add("NaWindowOff")
-  })
-  NavWindow.classList.remove("NaWindowOff")
-  NavWindow.classList.add("NaWindowOn")
+      if (w.classList.contains(ClassSt.windowMax)) {
+      } else {
+        w.className = ClassSt.windowInac;
+      }
+      const pointer = w.querySelector('.ClickAreaOn, .ClickAreaOff');
+      if (pointer) pointer.className = "ClickAreaOn";
+    });
+
+  if (win.classList.contains(ClassSt.windowMax)) {
+    win.className = ClassSt.windowMax;
+  } else {
+    win.className = ClassSt.windowOn;
+  }
+  win.style.zIndex = (maxZIndex + 1).toString();
+
+  document.querySelectorAll('.' + ClassSt.tBarOn + ', .' + ClassSt.tBarOff)
+    .forEach(t => t.className = ClassSt.tBarOff);
+  navWin.className = ClassSt.tBarOn;
+  if (pointerAr) pointerAr.className = "ClickAreaOff";
 }

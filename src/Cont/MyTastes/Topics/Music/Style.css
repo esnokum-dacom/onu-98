@@ -23,7 +23,7 @@
 }
 
 :root {
-  --primary-color: #e1e4bf;
+  --primary-color: #ffffff;
   --secondary-color: #fcffe0;
   --third-color: #f0f3ca;
   --fourth-color: #737b72;
@@ -38,12 +38,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-user-drag: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  scrollbar-width: none;
   text-decoration: none;
+  scrollbar-color: #b5cff2 var(--primary-color);
+  scrollbar-width: thin;
 }
 
 a {
@@ -53,7 +55,6 @@ a {
 body {
   height: 100vh;
   padding: 10px;
-  place-items: center;
   background-color: var(--primary-color);
 }
 
@@ -72,7 +73,6 @@ body {
 #ContainerAll {
   display: grid;
   place-items: center;
-  width: 600px;
 }
 
 #UserUpDc {
@@ -234,4 +234,17 @@ body {
   flex-direction: column;
   place-content: center;
   place-items: center;
+}
+
+@media(min-width: 750px) {
+  #Albumscalendar {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+@media(min-width: 1000px) {
+  body {
+    place-content: center;
+  }
 }

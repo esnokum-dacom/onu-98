@@ -23,7 +23,7 @@
 }
 
 :root {
-  --primary-color: #e1e4bf;
+  --primary-color: #ffffff;
   --secondary-color: #fcffe0;
   --third-color: #f0f3ca;
   --fourth-color: #737b72;
@@ -43,8 +43,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  scrollbar-width: none;
   text-decoration: none;
+  scrollbar-color: #b5cff2 var(--primary-color);
+  scrollbar-width: thin;
 }
 
 a {
@@ -53,13 +54,15 @@ a {
 
 body {
   height: 100vh;
+  width: 100%;
   padding: 10px;
   place-items: center;
   background-color: var(--primary-color);
 }
 
 #Container-BodyAMB {
-  width: 95%;
+  place-content: center;
+  place-items: center;
 }
 
 #BackExpl {
@@ -71,9 +74,13 @@ body {
 }
 
 #ContainerAll {
-  display: flex;
-  place-items: center;
-  width: 600px;
+  width: 60%;
+}
+
+#MyRD {
+  font-size: 25px;
+  width: 100%;
+  margin-top: 15px;
 }
 
 #UserUpDc {
@@ -88,11 +95,7 @@ body {
 }
 
 #Container-Center {
-  width: 100%;
   font-family: "win98";
-  display: flex;
-  flex-direction: row;
-  place-content: center;
   padding: 4px;
 }
 
@@ -110,6 +113,7 @@ body {
 
 .CdocAb {
   display: flex;
+  width: 90%;
   flex-direction: column;
   place-content: center;
   background-color: var(--third-color);
@@ -132,7 +136,7 @@ body {
 
 .CdocAb h2 {
   font-family: "hibrid7";
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 900;
   color: var(--fourth-color);
 }
@@ -163,6 +167,7 @@ body {
   font-family: "hibrid7";
   font-size: 10px;
   font-weight: 900;
+  width: 100%;
   color: var(--fourth-color);
 }
 
@@ -204,7 +209,7 @@ body {
 }
 
 .Render-img {
-  width: 150px;
+  width: 120px;
   outline: dashed .1px var(--lineVck-color);
   outline-offset: 2px;
   image-rendering: pixelated;
@@ -228,11 +233,11 @@ body {
   width: 20%;
 }
 
-.ContLeft {
+i .ContLeft {
   display: flex;
   place-content: center;
   place-items: center;
-  margin-right: auto;
+  margin: 0 15px 0 0;
 }
 
 .ContRig {
@@ -240,7 +245,6 @@ body {
   flex-direction: column;
   place-content: center;
   place-items: center;
-  margin: auto;
 }
 
 .eltodopoderoso {
@@ -251,5 +255,51 @@ body {
 }
 
 .Thth {
-  width: 80%;
+  width: 90%;
+}
+
+#MediaLogContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(auto, 280px);
+}
+
+@media (max-width: 600px) {
+  #MediaLogContainer {
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(1, auto);
+  }
+
+  #ContainerAll {
+    width: 100%;
+  }
+
+  .Render-img {
+    width: 150px;
+  }
+
+  .CdocAb p {
+    font-size: 10px;
+  }
+
+  #Container-Center {
+    place-content: center;
+    width: 100%;
+  }
+
+  body {
+    place-items: center;
+  }
+
+  #Container-BodyAMB {
+    width: 95%;
+  }
+}
+
+@media(max-width: 1200px) {
+  body {
+    width: max-content;
+  }
 }

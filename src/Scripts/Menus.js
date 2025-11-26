@@ -1,5 +1,5 @@
-const MenuTB = document.getElementById("PanelTBM")
-const MenuB = document.getElementById("HomeB")
+const MenuTB = document.getElementById("PanelTBMXp")
+const MenuB = document.getElementById("HomeBXp")
 const TextCal = document.getElementById("CalT")
 const TextDat = document.getElementById("CalD")
 let activeButton = null
@@ -24,15 +24,23 @@ setInterval(TimeInt, 1)
 
 MenuB.addEventListener("click", () => {
   if (activeButton === "ABM") {
-    MenuTB.classList.remove("MenuOp")
-    MenuTB.classList.add("MenuCl")
+    MenuTB.className = "MenuCl"
     activeButton = null
+    document.getElementById("MenuTriggerOn").id = "MenuTriggerOff"
   } else {
-    MenuTB.classList.remove("MenuCl")
-    MenuTB.classList.add("MenuOp")
+    MenuTB.className = "MenuOp"
     activeButton = "ABM"
+    document.getElementById("MenuTriggerOff").id = "MenuTriggerOn"
   }
 })
 
+document.getElementById("MenuTriggerOff").addEventListener("click", () => {
+  MenuTB.className = "MenuCl"
+  activeButton = null
+  document.getElementById("MenuTriggerOn").id = "MenuTriggerOff"
+})
 
-
+document.getElementById("Windows").addEventListener("click", () => {
+  MenuTB.className = "MenuCl"
+  activeButton = null
+})

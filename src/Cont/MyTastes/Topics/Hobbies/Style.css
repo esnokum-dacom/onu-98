@@ -94,7 +94,7 @@ select {
 #InfoHobbies {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: repeat(auto, auto);
   width: 90%;
   height: 100%;
 }
@@ -112,10 +112,9 @@ select {
 }
 
 #DanceStick {
-  position: absolute;
-  transform: translate(675px, -55px);
   width: 1px;
   color: var(--secondary-color);
+  place-self: center;
 }
 
 #InfoHobbies h1 {
@@ -128,5 +127,11 @@ select {
 
 #InfoHobbies p {
   margin: 15px 0;
-  width: 200px;
+}
+
+@media (max-width: 500px) {
+  #InfoHobbies {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(auto, auto);
+  }
 }
