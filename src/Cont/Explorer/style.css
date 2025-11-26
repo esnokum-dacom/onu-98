@@ -53,14 +53,15 @@ a {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   padding: 10px;
   place-items: center;
-  background-color: var(--primary-color);
   overflow: auto;
+  background: url("/src/Props/images/BackFExpl.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-
 
 #BackExpl {
   position: fixed;

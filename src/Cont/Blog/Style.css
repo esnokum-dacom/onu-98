@@ -57,7 +57,10 @@ body {
   width: 100%;
   padding: 10px;
   place-items: center;
-  background-color: var(--primary-color);
+  background: url("/src/Props/images/BackFExpl.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #Container-BodyAMB {

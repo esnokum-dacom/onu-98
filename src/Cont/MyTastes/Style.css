@@ -54,8 +54,11 @@ a {
 }
 
 body {
+  place-items: center;
   padding: 10px;
-  background-color: var(--primary-color);
+  background: url("/src/Props/images/BackFExpl.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #Container-BodyAMB {
