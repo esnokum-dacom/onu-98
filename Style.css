@@ -816,9 +816,13 @@ body {
   flex-shrink: 0;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 590px) {
   .NWindow {
     scale: 0.3;
+  }
+
+  .NXPWindow{
+    width: 400px !important; 
   }
 
   #Windows {

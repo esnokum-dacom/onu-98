@@ -81,7 +81,7 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   win.style.width = `${Width}px`;
   win.style.height = `${Height}px`;
 
-  const initialX = savedData?.x || Math.floor(Math.random() * 200 + 1);
+  const initialX = savedData?.x || Math.floor(Math.random() * 10 + 1);
   const initialY = savedData?.y || Math.floor(Math.random() * 200 + 1);
   win.style.left = initialX + "px";
   win.style.top = initialY + "px";
