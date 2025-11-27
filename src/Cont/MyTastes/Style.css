@@ -54,11 +54,11 @@ a {
 }
 
 body {
-  place-items: center;
   padding: 10px;
   background: url("/src/Props/images/BackFExpl.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #Container-BodyAMB {
