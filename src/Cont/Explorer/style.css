@@ -59,6 +59,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  place-items: center;
 }
 
 #BackExpl {
@@ -72,6 +73,7 @@ body {
 #ContainerAll {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 
 #UserUpDc {

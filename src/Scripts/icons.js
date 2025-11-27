@@ -34,6 +34,8 @@ function makeDraggable(element, storageKey) {
 const icon = document.getElementById("IconBack");
 const iconXp = document.getElementById("IconBackXp");
 
+let XpWindows = true
+
 const mq = window.matchMedia("(max-width: 590px)");
 
 function ifScreenMQ(e){
@@ -67,8 +69,6 @@ function ifScreenMQ(e){
 }
 
 ifScreenMQ(mq);
-
-let XpWindows = true
 
 const xpStyleSaved = localStorage.getItem("XpWindowsEnabled");
 if (xpStyleSaved === "true") {
