@@ -1,10 +1,10 @@
 import initRendersButton from "../../ScriptsAll/Window.js";
 
 if (window.parent.XpWindows) {
-  initRendersButton("CreateCW", "Renders", "../../Props/icons/MIE.png", "/src/Cont/Renders/index.html", 600, 500)
+  initRendersButton("CreateCW", "Renders", "/../../../Props/Icons/MIE.png", "/src/Cont/Renders/index.html", 600, 500)
 }
 else {
-  initRendersButton("CreateCW", "Renders", "../../Props/icons/MIE.png", "/src/Cont/Renders/index.html", 600, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
+  initRendersButton("CreateCW", "Renders", "/../../../Props/Icons/MIE.png", "/src/Cont/Renders/index.html", 600, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
 }
 
 if (window.parent.XpWindows) {
