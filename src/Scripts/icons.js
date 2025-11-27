@@ -7,7 +7,7 @@ function makeDraggable(element, storageKey) {
     element.style.left = posGuardada.left;
     element.style.top = posGuardada.top;
   }
-  element.addEventListener("mousedown", (e) => {
+  element.addEventListener("pointerdown", (e) => {
     SX = e.clientX;
     SY = e.clientY;
     const moveHandler = (e) => {
@@ -19,32 +19,54 @@ function makeDraggable(element, storageKey) {
       element.style.left = (element.offsetLeft - X) + "px";
     };
     const upHandler = () => {
-      document.removeEventListener("mousemove", moveHandler);
-      document.removeEventListener("mouseup", upHandler);
+      document.removeEventListener("pointermove", moveHandler);
+      document.removeEventListener("pointerup", upHandler);
       localStorage.setItem(storageKey, JSON.stringify({
         left: element.style.left,
         top: element.style.top
       }));
     };
-    document.addEventListener("mousemove", moveHandler);
-    document.addEventListener("mouseup", upHandler);
+    document.addEventListener("pointermove", moveHandler);
+    document.addEventListener("pointerup", upHandler);
   });
 }
 
 const icon = document.getElementById("IconBack");
 const iconXp = document.getElementById("IconBackXp");
 
-if (icon) {
-  makeDraggable(icon, "IconBackPos");
-  icon.addEventListener("dblclick", () => {
-    if (XpWindows) {
-      CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+const mq = window.matchMedia("(max-width: 590px)");
+
+function ifScreenMQ(e){
+  if(e.matches){
+      if (icon) {
+      icon.addEventListener("pointerdown", () => {
+            if (XpWindows) {
+              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+            }
+            else {
+              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
+            }
+          }
+        )
+      }
     }
-    else {
-      CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
+    else{
+      if(icon) {
+          makeDraggable(icon, "IconBackPos");
+          icon.addEventListener("dblclick", () => {
+            if (XpWindows) {
+              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+            }
+            else {
+              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
+            }
+          } 
+        )
+      }
     }
-  });
 }
+
+ifScreenMQ(mq);
 
 let XpWindows = true
 
@@ -55,20 +77,43 @@ if (xpStyleSaved === "true") {
   });
 }
 
-if (iconXp) {
-  makeDraggable(iconXp, "IconXpPos");
-  iconXp.addEventListener("dblclick", () => {
-    if (XpWindows) {
-      localStorage.setItem("XpWindowsEnabled", "true");
-      localStorage.removeItem("desktop_windows")
-      location.reload();
-    } else {
-      localStorage.removeItem("XpWindowsEnabled");
-      localStorage.removeItem("desktop_windows")
-      location.reload();
+function ifcreenMQ(e){
+  if(e.matches){
+      if (iconXp) {
+      iconXp.addEventListener("pointerdown", () => {
+            if (XpWindows) {
+              localStorage.setItem("XpWindowsEnabled", "true");
+              localStorage.removeItem("desktop_windows")
+              location.reload();
+            } else {
+              localStorage.removeItem("XpWindowsEnabled");
+              localStorage.removeItem("desktop_windows")
+              location.reload();
+            }
+          }
+        )
+      }
     }
-  });
+    else{
+      if(iconXp) {
+          makeDraggable(iconXp, "IconXpPos");;
+          iconXp.addEventListener("dblclick", () => {
+            if (XpWindows) {
+              localStorage.setItem("XpWindowsEnabled", "true");
+              localStorage.removeItem("desktop_windows")
+              location.reload();
+            } else {
+              localStorage.removeItem("XpWindowsEnabled");
+              localStorage.removeItem("desktop_windows")
+              location.reload();
+            }
+          } 
+        )
+      }
+    }
 }
+
+ifcreenMQ(mq);
 
 function WindowsXPStyle() {
   XpWindows = false
