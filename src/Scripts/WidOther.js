@@ -1,6 +1,6 @@
 const WindoowsEmp = document.getElementById("Windows")
 const TbBar = document.getElementById("buttonsTB")
-const mq = window.matchMedia("(max-width: 390px)");
+const mq = window.matchMedia("(max-width: 590px)");
 
 let windowCount = 0
 
@@ -282,6 +282,8 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
     SY = e.clientY;
     document.addEventListener("pointermove", mMove);
     document.addEventListener("pointerup", mUp);
+
+    e.target.setPointerCapture(e.pointerId);
   }
 
   function mMove(e) {
@@ -296,9 +298,13 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
     win.style.left = `${win.offsetLeft - X}px`;
   }
 
-  function mUp() {
+  function mUp(e) {
     document.removeEventListener("pointermove", mMove);
     document.removeEventListener("pointerup", mUp);
+    try {
+      e.target.releasePointerCapture(e.pointerId);
+    } catch {}
+
     saveCurrentState();
   }
 

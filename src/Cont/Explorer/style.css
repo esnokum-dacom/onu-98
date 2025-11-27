@@ -53,9 +53,7 @@ a {
 }
 
 body {
-  height: 100%;
   padding: 10px;
-  place-items: center;
   overflow: auto;
   background: url("/src/Props/images/BackFExpl.png");
   background-size: cover;
@@ -74,7 +72,6 @@ body {
 #ContainerAll {
   display: flex;
   flex-direction: column;
-  width: 80%;
 }
 
 #UserUpDc {
@@ -353,7 +350,7 @@ body {
   transform: translate(-95px, 5px);
 }
 
-@media (max-width: 380px) {
+@media (max-width: 590px) {
   #Container-Center {
     width: 720px;
   }
