@@ -107,15 +107,14 @@ async function getCurrentlyPlaying() {
   }
 }
 
-// Esperar a que el DOM esté listo antes de iniciar
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     getCurrentlyPlaying();
-    setInterval(getCurrentlyPlaying, 5000); // Cambiar a 5 segundos para no hacer demasiadas peticiones
+    setInterval(getCurrentlyPlaying, 2000);
   });
 } else {
   getCurrentlyPlaying();
-  setInterval(getCurrentlyPlaying, 5000);
+  setInterval(getCurrentlyPlaying, 2000);
 }
 
 
@@ -159,3 +158,48 @@ async function GetImages() {
 }
 
 GetImages()
+
+const ContainerLP = document.getElementById("lastPost")
+
+async function GetPost() {
+  try {
+    const response = await fetch("https://raw.githubusercontent.com/esnokum-dacom/Log-Media/refs/heads/main/JSON/LogMedia.json")
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    let LastPost = null
+
+    data.allmedia.forEach((post, index, array) => {
+      if (index === array.length - 1) {
+        LastPost = post.imageport
+        const RContainer = document.createElement("div")
+        ContainerLP.append(RContainer)
+
+        const PostScore = document.createElement("h2")
+        PostScore.innerText = post.score;
+        PostScore.id = "TTextBander"
+        PostScore.style.fontSize = "15px"
+        RContainer.appendChild(PostScore)
+
+        const PostTitle = document.createElement("h2")
+        PostTitle.innerText = post.medianame;
+        PostTitle.className = "bander"
+        PostTitle.id = "TTextBander"
+        RContainer.appendChild(PostTitle)
+
+        const image = document.createElement('img');
+        image.src = LastPost;
+        image.className = "Render-img"
+        image.style.maxWidth = "120px"
+        RContainer.appendChild(image);
+      }
+    });
+
+  } catch (error) {
+
+  }
+}
+
+GetPost()
