@@ -352,6 +352,11 @@ body {
   transform: translate(-95px, 5px);
 }
 
+#OnuSentao img {
+  width: 200px;
+  image-rendering: pixelated;
+}
+
 @media (max-width: 590px) {
   #Container-Center {
     width: 720px;
