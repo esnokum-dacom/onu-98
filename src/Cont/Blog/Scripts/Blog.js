@@ -8,16 +8,19 @@ async function GetMediaLog() {
     }
     const data = await response.json();
 
-    data.allmedia
-
     const Music = data.allmedia.filter(item => item.type === "Music")
     const Anime = data.allmedia.filter(item => item.type === "Animé")
     const Serie = data.allmedia.filter(item => item.type === "Serie")
      
-    data.allmedia.sort((a, b) => b.id - a.id)
-      Music.forEach(media => {
+      Music
+      .reverse()
+      .forEach(media => {
         const ContainerMusic = document.getElementById("ContainerMusic")
         ContainerImgs.append(ContainerMusic)
+
+        const serpr = document.createElement("div");
+        serpr.className = "sepC"
+        ContainerMusic.appendChild(serpr)
 
         const InterContainer = document.createElement("div")
         InterContainer.className = "PostMedia"
@@ -29,7 +32,6 @@ async function GetMediaLog() {
 
         const ImageTitle = document.createElement("h2")
         ImageTitle.innerText = media.medianame;
-        ImageTitle.className = "Bander"
         ImageTitle.id = "TextBander"
         RContainer.appendChild(ImageTitle)
 
@@ -73,7 +75,6 @@ async function GetMediaLog() {
 
         const IdTh = document.createElement("h2")
         IdTh.innerText = "Thought"
-        IdTh.className = "Bander"
         IdTh.id = "TextBander"
         IdTh.style.textAlign = "center"
         containerTH.appendChild(IdTh)
@@ -84,7 +85,9 @@ async function GetMediaLog() {
         containerTH.appendChild(thought)
       });
 
-      Anime.forEach(media => {
+      Anime
+      .reverse()
+      .forEach(media => {
         const ContainerAnimes = document.getElementById("ContainerAnimes")
         ContainerImgs.append(ContainerMusic)
 
@@ -92,13 +95,16 @@ async function GetMediaLog() {
         InterContainer.className = "PostMedia"
         ContainerAnimes.append(InterContainer)
 
+        const serpr = document.createElement("div");
+        serpr.className = "sepC"
+        ContainerAnimes.appendChild(serpr)
+
         const RContainer = document.createElement("div")
         RContainer.className = "CdocAb"
         InterContainer.append(RContainer)
 
         const ImageTitle = document.createElement("h2")
         ImageTitle.innerText = media.medianame;
-        ImageTitle.className = "Bander"
         ImageTitle.id = "TextBander"
         RContainer.appendChild(ImageTitle)
 
@@ -142,7 +148,6 @@ async function GetMediaLog() {
 
         const IdTh = document.createElement("h2")
         IdTh.innerText = "Thought"
-        IdTh.className = "Bander"
         IdTh.id = "TextBander"
         IdTh.style.textAlign = "center"
         containerTH.appendChild(IdTh)
@@ -153,9 +158,15 @@ async function GetMediaLog() {
         containerTH.appendChild(thought)
       });
 
-      Serie.forEach(media => {
+      Serie
+      .reverse()
+      .forEach(media => {
         const ContainerSerie = document.getElementById("ContainerSeries")
         ContainerImgs.append(ContainerMusic)
+
+        const serpr = document.createElement("div");
+        serpr.className = "sepC"
+        ContainerSerie.append(serpr)
 
         const InterContainer = document.createElement("div")
         InterContainer.className = "PostMedia"
@@ -167,7 +178,6 @@ async function GetMediaLog() {
 
         const ImageTitle = document.createElement("h2")
         ImageTitle.innerText = media.medianame;
-        ImageTitle.className = "Bander"
         ImageTitle.id = "TextBander"
         RContainer.appendChild(ImageTitle)
 
@@ -211,7 +221,6 @@ async function GetMediaLog() {
 
         const IdTh = document.createElement("h2")
         IdTh.innerText = "Thought"
-        IdTh.className = "Bander"
         IdTh.id = "TextBander"
         IdTh.style.textAlign = "center"
         containerTH.appendChild(IdTh)

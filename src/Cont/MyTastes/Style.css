@@ -1,32 +1,12 @@
-@font-face {
-  font-family: "Win95";
-  src: url(../../Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
-  font-weight: bold;
-}
+@import url("../../Props/Fonts/fonts.css");
 
-@font-face {
-  font-family: "Win98";
-  src: url(../../Props/Fonts/MSW98UI-Regular.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Pixie97";
-  src: url(../..Props/Fonts/ari-w9500.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "hibrid7";
-  src: url(../../Props/Fonts/BelanidiSerif-Regular.otf) format('opentype');
-  font-weight: bold;
-}
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #fcffe0;
-  --third-color: #f0f3ca;
-  --fourth-color: #737b72;
+  --primary-color: rgb(224, 224, 224);
+  --secondary-color: rgb(25, 25, 25);
+  --third-color: rgb(82, 82, 82);
+  --fourth-color: rgb(120, 120, 120);
+  --fifth-color: rgb(10, 10, 10);
   --lineVck-color: #2c302b;
 
   --line-wcolor: #d7dab9;
@@ -46,23 +26,44 @@
   text-decoration: none;
   scrollbar-color: #b5cff2 var(--primary-color);
   scrollbar-width: thin;
+  font-family: "OCRMono";
+  letter-spacing: -2px;
 }
-
 
 a {
   color: #0a0a0a;
 }
 
 body {
+  background-color: var(--fifth-color);
+  background-image: linear-gradient(45deg, var(--primary-color) 1px, transparent 1px), linear-gradient(-45deg, var(--primary-color) 1px, transparent 1px);
+  background-size: 20px 20px;
   padding: 10px;
-  background: url("/src/Props/images/BackFExpl.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  overflow: auto;
+  place-items: center;
 }
 
 #Container-BodyAMB {
-  width: 95%;
+  width: 100%;
+  place-content: center;
+  place-items: center;
+}
+
+.BanderBut {
+  background: none;
+  padding: 3px;
+  text-align: center;
+  margin: 8px 0;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.BanderBut b {
+  color: #008010;
 }
 
 #BackExpl {
@@ -74,9 +75,17 @@ body {
 }
 
 #ContainerAll {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+#MyRD {
+  font-size: 30px;
+  background: var(--secondary-color);
   place-items: center;
-  width: 600px;
+  width: 100%;
+  margin-top: 15px;
 }
 
 #UserUpDc {
@@ -92,142 +101,200 @@ body {
 
 #Container-Center {
   width: 100%;
-  font-family: "win98";
   display: flex;
   flex-direction: row;
   place-content: center;
   padding: 4px;
 }
 
-#Fhead h1 {
-  font-family: "hibrid7";
-}
-
-#Fhead div {
-  position: absolute;
-  width: 60%;
-}
-
-#Fhead p {
-  font-size: 20px;
-}
-
-#ImgF {
-  z-index: -1;
-  width: 98%;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
-}
-
-.CdocAb {
+.Others {
   display: flex;
   flex-direction: column;
   place-content: center;
-  place-items: center;
-  background-color: var(--third-color);
-  padding: 5px 10px;
   text-align: center;
-  margin: 10px 5px;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
+  padding: 20px 40px;
+  margin: 10px 5px 30px 0px;
+  background: var(--secondary-color);
+  width: 100%;
+}
+
+.CdocAb {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 10px;
+  width: 50%;
+  text-align: left;
+  margin: 10px 0px 10px 0;
 }
 
 .CdocAb h1 {
-  font-family: "hibrid7";
+  color: var(--primary-color);
 }
 
 .CdocAb p {
   margin: 8px 0;
-  color: var(--lineVck-color);
+  color: var(--third-color);
 }
 
 .CdocAb h2 {
-  font-family: "hibrid7";
   font-size: 20px;
   font-weight: 900;
   color: var(--fourth-color);
 }
 
 .CdocAb b {
-  font-family: "Win95";
+  color: var(--primary-color);
+}
+
+#SePR {
+  width: 20px;
 }
 
 .Bander {
-  background-color: var(--line-wcolor);
-  padding: 0 8px;
-  text-align: left;
-  outline: dashed .1px var(--fourth-color);
-  outline-offset: 2px;
-}
-
-.BanderBut {
-  background-color: var(--line-wcolor);
   padding: 0 8px;
   text-align: left;
   margin: 8px 0;
-  outline: dashed .1px var(--fourth-color);
-  outline-offset: 2px;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  border: none;
-  font-family: "hibrid7";
-  font-weight: 900;
-  color: var(--fourth-color);
-  cursor: pointer;
-}
-
-#MyRD {
-  width: calc(100% + 380px);
-  transform: translateX(-190px);
+  width: calc(100% + 20px);
 }
 
 #ContxBand {
-  width: calc(100% + 50px);
-  transform: translateX(-30px);
+  width: 100%;
 }
 
 #TitleOth {
-  font-family: "hibrid7";
   font-size: 10px;
   font-weight: 900;
   color: var(--fourth-color);
 }
 
 #TextBander {
-  font-family: "hibrid7";
+  margin: 10px;
   font-weight: 900;
-  font-size: 20px;
   color: var(--fourth-color);
-  width: calc(100% + 10px);
-  text-align: center;
 }
 
-#ImagesContainer {
-  display: grid;
-  grid-template-columns: repeat(1, auto);
-  grid-template-rows: repeat(1, auto);
+#CreateCW {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
 }
 
-.Render-img {
-  width: 400px;
-  margin: 8px 0;
+#CreateBl {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 #IconMini {
   width: 25px;
   margin: 0 5px 0 0;
   image-rendering: pixelated;
-  filter: invert(47%);
+  filter: brightness(1000);
 }
 
-#NavigationT {
-  place-self: center;
-  width: 60%;
+.Render-img {
+  width: 220px;
+  image-rendering: pixelated;
 }
 
-@media (min-width: 1000px) {
+.Bander {
+  background-color: var(--secondary-color);
+  padding: 0 8px;
+  text-align: left;
+  margin: 8px 0;
+}
+
+#TTextBander {
+  font-weight: 900;
+  font-size: 10px;
+  color: var(--primary-color);
+  width: 20%;
+}
+
+.ContLeft {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  margin: 0 15px 0 0;
+}
+
+.ContRig {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  padding:  20px 0 10px 0;
+}
+
+.eltodopoderoso {
+  place-content: center;
+  place-items: center;
+  padding: 0 20px;
+}
+
+.Thth {
+  width: 90%;
+}
+
+#MediaLogContainer {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+}
+
+.PostMedia {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+
+.sepC{
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  background: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  #ContainerAll {
+    width: 100%;
+  }
+
+  .Render-img {
+    width: 150px;
+  }
+
+  .CdocAb p {
+    max-width: 500px;
+    font-size: 15px;
+  }
+
+  #Container-Center {
+    place-content: center;
+    place-items: center;
+    width: 100%;
+  }
+
   body {
     place-items: center;
+  }
+
+  .ContRig{
+    padding: 0 15px;
+  }
+
+  .PostMedia{
+    flex-direction: column;
+  }
+  .CdocAb{
+    width: 100%;
   }
 }

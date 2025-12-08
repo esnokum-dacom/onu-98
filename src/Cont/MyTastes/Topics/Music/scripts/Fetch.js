@@ -24,12 +24,6 @@ async function GetAlbumRec() {
         albumMonth.id = "TextBander"
         RContainer.appendChild(albumMonth)
 
-        const ImageTitle = document.createElement("h2")
-        ImageTitle.innerText = alb.albumname;
-        ImageTitle.className = "Bander"
-        ImageTitle.id = "Song"
-        RContainer.appendChild(ImageTitle)
-
         const infoAlb = document.createElement("div")
         infoAlb.className = "ContTh"
         RContainer.appendChild(infoAlb)
@@ -48,6 +42,12 @@ async function GetAlbumRec() {
         artistName.className = "Bander"
         artistName.id = "TextBander"
         infB.appendChild(artistName)
+
+        const ImageTitle = document.createElement("h2")
+        ImageTitle.innerText = alb.albumname;
+        ImageTitle.className = "Bander"
+        ImageTitle.id = "Song"
+        infB.appendChild(ImageTitle)
 
         const Thought = document.createElement("p")
         Thought.className = "Bander"

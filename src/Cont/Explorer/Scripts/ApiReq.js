@@ -30,7 +30,7 @@ async function getAccessToken() {
 async function getCurrentlyPlaying() {
   try {
     const token = await getAccessToken();
-    
+
     if (!token) {
       console.log('No se pudo obtener el token de acceso');
       const spotifyElement = document.getElementById("SpotifySong");
@@ -61,7 +61,7 @@ async function getCurrentlyPlaying() {
     }
 
     const data = await res.json();
-    
+
     if (!data.item) {
       return;
     }
@@ -86,7 +86,7 @@ async function getCurrentlyPlaying() {
     const timeElement = document.getElementById("Time");
     const barIntElement = document.getElementById("BarInt");
 
-    if (songElement) songElement.innerText = `⋆ ${song.name}`;
+    if (songElement) songElement.innerText = `${song.name}`;
     if (albumArtElement && song.album.images && song.album.images[0]) {
       albumArtElement.src = song.album.images[0].url;
     }

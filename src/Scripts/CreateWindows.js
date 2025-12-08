@@ -28,7 +28,7 @@ explHome.addEventListener("click", () => {
 
 mypc.addEventListener("click", () => {
   if (XpWindows) {
-    CreateWid(mypc, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, 330, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
+    CreateWid(mypc, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, 330, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
   }
   else {
     CreateWid(mypc, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, 330, 500)

@@ -1,32 +1,11 @@
-@font-face {
-  font-family: "Win95";
-  src: url(../../../../Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Win98";
-  src: url(../../../../Props/Fonts/MSW98UI-Regular.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Pixie97";
-  src: url(../../../../Props/Fonts/ari-w9500.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "hibrid7";
-  src: url(../../../../Props/Fonts/BelanidiSerif-Regular.otf) format('opentype');
-  font-weight: bold;
-}
+@import url("/src/Props/fonts/fonts.css");
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #fcffe0;
-  --third-color: #f0f3ca;
-  --fourth-color: #737b72;
+  --primary-color: rgb(224, 224, 224);
+  --secondary-color: rgb(25, 25, 25);
+  --third-color: rgb(82, 82, 82);
+  --fourth-color: rgb(120, 120, 120);
+  --fifth-color: rgb(10, 10, 10);
   --lineVck-color: #2c302b;
 
   --line-wcolor: #d7dab9;
@@ -46,6 +25,8 @@
   text-decoration: none;
   scrollbar-color: #b5cff2 var(--primary-color);
   scrollbar-width: thin;
+  font-family: "OCRMono";
+  letter-spacing: -2px;
 }
 
 a {
@@ -53,14 +34,17 @@ a {
 }
 
 body {
+  background-color: var(--fifth-color);
+  background-image: linear-gradient(45deg, var(--primary-color) 1px, transparent 1px), linear-gradient(-45deg, var(--primary-color) 1px, transparent 1px);
+  background-size: 20px 20px;
   padding: 10px;
-  background: url("/src/Props/images/BackFExpl.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  overflow: auto;
+  place-items: center;
 }
 
 #Container-BodyAMB {
+  place-content: center;
+  place-items: center;
   width: 95%;
 }
 
@@ -74,7 +58,6 @@ body {
 
 #ContainerAll {
   display: grid;
-  place-items: center;
 }
 
 #UserUpDc {
@@ -97,91 +80,71 @@ body {
   padding: 4px;
 }
 
-#Fhead h1 {
-  font-family: "hibrid7";
-}
-
-#Fhead div {
-  position: absolute;
-  width: 60%;
-}
-
-#Fhead p {
-  font-size: 20px;
-}
-
-#ImgF {
-  z-index: -1;
-  width: 98%;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
-}
-
 .CdocAb {
+  width: 100%;
   display: flex;
   flex-direction: column;
   place-content: center;
-  background-color: var(--third-color);
   padding: 5px 10px;
-  text-align: center;
   margin: 10px 10px;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
+  background-color: var(--secondary-color);
+  text-align: left;
 }
 
 .CdocAb h1 {
-  font-family: "hibrid7";
+  color: var(--primary-color);
 }
 
 .CdocAb p {
   margin: 8px 0;
-  font-size: 15px;
-  color: var(--lineVck-color);
+  color: var(--third-color);
 }
 
 .CdocAb h2 {
-  font-family: "hibrid7";
   font-size: 20px;
   font-weight: 900;
   color: var(--fourth-color);
 }
 
 .CdocAb b {
-  font-family: "Win95";
+  color: var(--primary-color);
 }
 
-.Bander {
-  background-color: var(--line-wcolor);
-  padding: 0 8px;
-  text-align: left;
-  outline: dashed .1px var(--fourth-color);
-  outline-offset: 2px;
+#SePR {
+  width: 20px;
 }
 
 #MyRD {
-  width: calc(100% + 40px);
-  transform: translateX(-20px);
+  font-size: 30px;
+  background: var(--secondary-color);
+  place-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.Bander {
+  padding: 0 8px;
+  text-align: left;
+}
+
+#MyRD {
+  width: 100%;
 }
 
 #ContxBand {
-  width: calc(100% + 50px);
-  transform: translateX(-30px);
+  width: 100%;
 }
 
 #TitleOth {
-  font-family: "hibrid7";
   font-size: 10px;
   font-weight: 900;
   color: var(--fourth-color);
 }
 
 #TextBander {
-  font-family: "hibrid7";
+  margin: 10px;
   font-weight: 900;
-  font-size: 20px;
   color: var(--fourth-color);
-  text-align: center;
-  margin: 5px 8px;
 }
 
 #Albumscalendar {
@@ -207,20 +170,18 @@ body {
 }
 
 #ThoughtAlb {
-  font-family: "hibrid7";
-  font-weight: 900;
   font-size: 12px;
-  color: var(--fourth-color);
-  text-align: center;
+  color: var(--primary-color);
+  text-align: left;
   margin: 5px 8px;
 }
 
 #Song {
-  margin: -15px 0;
-  width: calc(55%);
+  width: 100%;
   font-size: 15px;
-  transform: translate(-22px, 25px);
   z-index: 1;
+  margin: 5px 8px;
+  padding: 0 15px;
 }
 
 .ContTh {

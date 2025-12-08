@@ -1,38 +1,17 @@
-@font-face {
-  font-family: "Win95";
-  src: url(../../Props/Fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Win98";
-  src: url(../../Props/Fonts/MSW98UI-Regular.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Pixie97";
-  src: url(../..Props/Fonts/ari-w9500.ttf) format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "hibrid7";
-  src: url(../../Props/Fonts/BelanidiSerif-Regular.otf) format('opentype');
-  font-weight: bold;
-}
+@import url("../../Props/Fonts/fonts.css");
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #fcffe0;
-  --third-color: #f0f3ca;
-  --fourth-color: #737b72;
+  --back-color: #2d2f2e;
+  --primary-color: rgb(224, 224, 224);
+  --secondary-color: rgb(25, 25, 25);
+  --third-color: rgb(82, 82, 82);
+  --fourth-color: rgb(120, 120, 120);
+  --fifth-color: rgb(10, 10, 10);
   --lineVck-color: #2c302b;
 
   --line-wcolor: #d7dab9;
   --line-bcolor: #4f534b;
 }
-
 
 * {
   padding: 0;
@@ -44,20 +23,50 @@
   user-select: none;
   scrollbar-width: none;
   text-decoration: none;
+  font-family: "OCRMono";
+}
+
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+input,
+textarea,
+label,
+p,
+select {
+  filter: blur(0.7px) !important;
+}
+
+#NoiseFront {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  mix-blend-mode: screen;
+  opacity: 0.1;
+  filter: blur(0.5px);
+  pointer-events: none;
 }
 
 a {
   color: #0a0a0a;
+  filter: blur(0.7px);
 }
 
 body {
+  background-color: var(--fifth-color);
+  background-image: linear-gradient(45deg, var(--primary-color) 1px, transparent 1px), linear-gradient(-45deg, var(--primary-color) 1px, transparent 1px);
+  background-size: 20px 20px;
   height: 100vh;
   padding: 10px;
   place-items: center;
-  background: url("/src/Props/images/BackFExpl.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 #Container-BodyAMB {
@@ -65,10 +74,18 @@ body {
   place-items: center;
 }
 
+#InfoHeader {
+  width: 100%;
+  place-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(1, auto);
+}
+
 #BackExpl {
   position: fixed;
   width: 100%;
-  opacity: .8;
+  opacity: 0.8;
   z-index: -1;
   margin: -10px;
 }
@@ -79,29 +96,13 @@ body {
   width: 80%;
 }
 
-#UserUpDc {
-  padding: 5px;
-  width: 180px;
-  background-color: var(--secondary-color);
-  border: none;
-  border-left: 3px solid var(--line-wcolor);
-  border-top: 3px solid var(--line-wcolor);
-  border-bottom: 3px solid var(--line-bcolor);
-  border-right: 3px solid var(--line-bcolor);
-}
-
 #Container-Center {
   width: 100%;
-  font-family: "win98";
   display: flex;
   flex-direction: row;
   height: 500px;
   place-content: center;
   padding: 4px;
-}
-
-#Fhead h1 {
-  font-family: "hibrid7";
 }
 
 #Fhead div {
@@ -116,8 +117,6 @@ body {
 #ImgF {
   z-index: -1;
   width: 98%;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
 }
 
 .CdocAb {
@@ -125,44 +124,32 @@ body {
   flex-direction: column;
   place-content: center;
   place-items: center;
-  background-color: var(--third-color);
-  text-align: center;
+  background: var(--secondary-color);
+  text-align: left;
   margin: 10px 5px;
-  padding: 20px;
+  padding: 5px;
   width: 95%;
-  outline: dashed .1px var(--lineVck-color);
-  outline-offset: 2px;
-}
-
-.CdocAb h1 {
-  font-family: "hibrid7";
+  filter: drop-shadow(2px 2px 2px var(--secondary-color, 20%));
 }
 
 .CdocAb p {
   margin: 8px 0;
-  color: var(--lineVck-color);
+  color: var(--primary-color);
 }
 
 .CdocAb h2 {
-  font-family: "hibrid7";
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 900;
-  color: var(--fourth-color);
-}
-
-.CdocAb b {
-  font-family: "Win95";
+  color: var(--primary-color);
 }
 
 .Bander {
-  background-color: var(--line-wcolor);
   padding: 0 8px;
-  width: 90%;
+  width: 100%;
   margin: 5px 0;
   text-align: left;
-  outline: dashed .1px var(--fourth-color);
-  outline-offset: 2px;
   z-index: 2;
+  filter: drop-shadow(2px 2px 1px color-mix(in srgb, var(--secondary-color), transparent 40%));
 }
 
 #MyRD {
@@ -175,31 +162,31 @@ body {
 }
 
 #TitleOth {
-  font-family: "hibrid7";
   font-size: 10px;
   font-weight: 900;
-  width: 90%;
-  color: var(--fourth-color);
+  width: 100%;
+  color: var(--primary-color);
 }
 
 #TextBander {
-  font-family: "hibrid7";
   font-weight: 900;
+  padding: 5px 0;
   font-size: 12px;
-  color: var(--fourth-color);
-  text-align: center;
+  color: var(--primary-color);
+  text-align: left;
   width: 100%;
 }
 
 #ImagesContainer {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 320px);
-  grid-template-rows: repeat(3, 300px);
+  place-content: center;
+  place-items: center;
+  grid-template-columns: repeat(2, 500px);
 }
 
 .Render-img {
-  margin: 8px 0;
-  width: 70%;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -210,15 +197,22 @@ body {
 
   #ImagesContainer {
     grid-template-columns: repeat(1, 500px);
-    grid-template-rows: repeat(1, 500px);
+    grid-template-rows: repeat(1, auto);
   }
 
   .Render-img {
-    width: 100%;
+    width: 95%;
   }
 
   #Container-Center {
     width: 720px;
   }
 
+  .CdocAb h2 {
+    font-size: 20px;
+  }
+
+  .CdocAb p {
+    font-size: 10px;
+  }
 }

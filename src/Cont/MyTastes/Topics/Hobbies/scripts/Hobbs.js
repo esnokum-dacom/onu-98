@@ -17,10 +17,10 @@ document.getElementById("Learn").addEventListener("click", () => {
   document.getElementById("Learn").innerText = "*Learn"
 
   document.getElementById("TitleB1").innerText = "Books"
-  document.getElementById("InfoB1").innerText = "I start to read a really good book, is from a good writer called dostoyevski, Crime and Punishment. I want to start other kind of writers like nietzsche or sigmund freud"
+  document.getElementById("InfoB1").innerText = "I like to read books, is my favourite activity for too many reasons, but i know is not wow but i want to be more cult, yeah i like to read books. I want begin more but... i stuck with 4 books."
 
   document.getElementById("TitleB2").innerText = "Series"
-  document.getElementById("InfoB2").innerText = "I like to watch series, like the witcher, You, karma (from netflix), etc. i like to watch series. But i haven't time for watch more series. I want to watch more series"
+  document.getElementById("InfoB2").innerText = "I like to watch series, like the witcher, You, karma (from netflix), etc. i like to watch series. I want to begin more series"
 
   document.getElementById("TitleB3").innerText = "Animes"
   document.getElementById("InfoB3").innerText = "I start to watch more animes, i start with a anime called 'Serial experiments lain', is too good and i like this anime for psychological reasons. I want to start with manwhas..."

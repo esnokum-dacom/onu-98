@@ -38,34 +38,34 @@ let XpWindows = true
 
 const mq = window.matchMedia("(max-width: 590px)");
 
-function ifScreenMQ(e){
-  if(e.matches){
-      if (icon) {
+function ifScreenMQ(e) {
+  if (e.matches) {
+    if (icon) {
       icon.addEventListener("pointerdown", () => {
-            if (XpWindows) {
-              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
-            }
-            else {
-              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
-            }
-          }
-        )
+        if (XpWindows) {
+          CreateWid(icon, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+        }
+        else {
+          CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
+        }
       }
+      )
     }
-    else{
-      if(icon) {
-          makeDraggable(icon, "IconBackPos");
-          icon.addEventListener("dblclick", () => {
-            if (XpWindows) {
-              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
-            }
-            else {
-              CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
-            }
-          } 
-        )
+  }
+  else {
+    if (icon) {
+      makeDraggable(icon, "IconBackPos");
+      icon.addEventListener("dblclick", () => {
+        if (XpWindows) {
+          CreateWid(icon, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+        }
+        else {
+          CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
+        }
       }
+      )
     }
+  }
 }
 
 ifScreenMQ(mq);
@@ -77,40 +77,40 @@ if (xpStyleSaved === "true") {
   });
 }
 
-function ifcreenMQ(e){
-  if(e.matches){
-      if (iconXp) {
+function ifcreenMQ(e) {
+  if (e.matches) {
+    if (iconXp) {
       iconXp.addEventListener("pointerdown", () => {
-            if (XpWindows) {
-              localStorage.setItem("XpWindowsEnabled", "true");
-              localStorage.removeItem("desktop_windows")
-              location.reload();
-            } else {
-              localStorage.removeItem("XpWindowsEnabled");
-              localStorage.removeItem("desktop_windows")
-              location.reload();
-            }
-          }
-        )
+        if (XpWindows) {
+          localStorage.setItem("XpWindowsEnabled", "true");
+          localStorage.removeItem("desktop_windows")
+          location.reload();
+        } else {
+          localStorage.removeItem("XpWindowsEnabled");
+          localStorage.removeItem("desktop_windows")
+          location.reload();
+        }
       }
+      )
     }
-    else{
-      if(iconXp) {
-          makeDraggable(iconXp, "IconXpPos");;
-          iconXp.addEventListener("dblclick", () => {
-            if (XpWindows) {
-              localStorage.setItem("XpWindowsEnabled", "true");
-              localStorage.removeItem("desktop_windows")
-              location.reload();
-            } else {
-              localStorage.removeItem("XpWindowsEnabled");
-              localStorage.removeItem("desktop_windows")
-              location.reload();
-            }
-          } 
-        )
+  }
+  else {
+    if (iconXp) {
+      makeDraggable(iconXp, "IconXpPos");;
+      iconXp.addEventListener("dblclick", () => {
+        if (XpWindows) {
+          localStorage.setItem("XpWindowsEnabled", "true");
+          localStorage.removeItem("desktop_windows")
+          location.reload();
+        } else {
+          localStorage.removeItem("XpWindowsEnabled");
+          localStorage.removeItem("desktop_windows")
+          location.reload();
+        }
       }
+      )
     }
+  }
 }
 
 ifcreenMQ(mq);

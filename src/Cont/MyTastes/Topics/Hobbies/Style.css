@@ -92,6 +92,7 @@ select {
 }
 
 #InfoHobbies {
+  place-self: center;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(auto, auto);
