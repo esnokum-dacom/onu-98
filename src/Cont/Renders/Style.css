@@ -24,6 +24,8 @@
   scrollbar-width: none;
   text-decoration: none;
   font-family: "OCRMono";
+  scrollbar-color: #b5cff2 var(--primary-color);
+  scrollbar-width: thin;
 }
 
 body h1,
@@ -67,6 +69,8 @@ body {
   height: 100vh;
   padding: 10px;
   place-items: center;
+  overflow: auto;
+  
 }
 
 #Container-BodyAMB {
