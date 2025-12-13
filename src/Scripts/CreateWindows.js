@@ -7,7 +7,7 @@ const mypc = document.querySelector(".MPtab")
 
 IntExplorer.addEventListener("click", () => {
   if (XpWindows) {
-    CreateWid(IntExplorer, "Explorer", "/wxp/IEX.ico", "/src/Cont/Explorer/index.html", null, 900, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
+    CreateWid(IntExplorer, "Explorer", "/wxp/IEX.ico", "/src/Cont/Explorer/index.html", null, 1000, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
   }
   else {
     CreateWid(IntExplorer, "Explorer", "MIE.png", "/src/Cont/Explorer/index.html", null)
@@ -16,7 +16,7 @@ IntExplorer.addEventListener("click", () => {
 
 explHome.addEventListener("click", () => {
   if (XpWindows) {
-    CreateWid(explHome, "Explorer", "/wxp/IEX.ico", "/src/Cont/Explorer/index.html", null, 900, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
+    CreateWid(explHome, "Explorer", "/wxp/IEX.ico", "/src/Cont/Explorer/index.html", null, 1000, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
   }
   else {
     CreateWid(explHome, "Explorer", "MIE.png", "/src/Cont/Explorer/index.html")

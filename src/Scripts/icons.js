@@ -1,34 +1,67 @@
 import CreateWid from "./WidOther.js";
 
 function makeDraggable(element, storageKey) {
-  let X = 0, Y = 0, SX = 0, SY = 0;
+  let startX = 0, startY = 0;
+  let elX = 0, elY = 0;
+
   const posGuardada = JSON.parse(localStorage.getItem(storageKey));
-  if (posGuardada) {
-    element.style.left = posGuardada.left;
-    element.style.top = posGuardada.top;
+  document.addEventListener("DOMContentLoaded", () => {
+    if (posGuardada) { 
+        element.style.left = posGuardada.left + "%";
+        element.style.top = posGuardada.top + "%"; 
+  }})
+
+  if (posGuardada) { 
+    element.style.left = posGuardada.left + "%";
+    element.style.top = posGuardada.top + "%"; 
   }
+
+  element.style.touchAction = "none";
+
   element.addEventListener("pointerdown", (e) => {
-    SX = e.clientX;
-    SY = e.clientY;
-    const moveHandler = (e) => {
-      X = SX - e.clientX;
-      Y = SY - e.clientY;
-      SX = e.clientX;
-      SY = e.clientY;
-      element.style.top = (element.offsetTop - Y) + "px";
-      element.style.left = (element.offsetLeft - X) + "px";
-    };
-    const upHandler = () => {
-      document.removeEventListener("pointermove", moveHandler);
-      document.removeEventListener("pointerup", upHandler);
-      localStorage.setItem(storageKey, JSON.stringify({
-        left: element.style.left,
-        top: element.style.top
-      }));
-    };
+    e.preventDefault();
+
+    startX = e.clientX;
+    startY = e.clientY;
+
+    const rect = element.getBoundingClientRect();
+    elX = rect.left;
+    elY = rect.top;
+
     document.addEventListener("pointermove", moveHandler);
     document.addEventListener("pointerup", upHandler);
   });
+
+  function moveHandler(e) {
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    let newX = elX + dx;
+    let newY = elY + dy;
+
+    const maxX = window.innerWidth - element.offsetWidth;
+    const maxY = window.innerHeight - element.offsetHeight;
+
+    newX = Math.max(0, Math.min(newX, maxX));
+    newY = Math.max(0, Math.min(newY, maxY));
+
+    element.style.left = newX + "px";
+    element.style.top = newY + "px";
+  }
+
+  function upHandler() {
+    document.removeEventListener("pointermove", moveHandler);
+    document.removeEventListener("pointerup", upHandler);
+
+    const leftPercent = (element.offsetLeft / window.innerWidth) * 100;
+    const topPercent = (element.offsetTop / window.innerHeight) * 100;
+
+    localStorage.setItem(storageKey, JSON.stringify({
+      left: leftPercent,
+      top: topPercent
+    }));
+  }
+
 }
 
 const icon = document.getElementById("IconBack");
@@ -36,12 +69,13 @@ const iconXp = document.getElementById("IconBackXp");
 
 let XpWindows = true
 
-const mq = window.matchMedia("(max-width: 590px)");
+const mq = window.matchMedia("(max-width: 600px)");
 
 function ifScreenMQ(e) {
   if (e.matches) {
+    makeDraggable(icon, "IconBackPos");
     if (icon) {
-      icon.addEventListener("pointerdown", () => {
+      icon.addEventListener("click", () => {
         if (XpWindows) {
           CreateWid(icon, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
@@ -78,9 +112,10 @@ if (xpStyleSaved === "true") {
 }
 
 function ifcreenMQ(e) {
+  makeDraggable(iconXp, "IconXpPos");
   if (e.matches) {
     if (iconXp) {
-      iconXp.addEventListener("pointerdown", () => {
+      iconXp.addEventListener("click", () => {
         if (XpWindows) {
           localStorage.setItem("XpWindowsEnabled", "true");
           localStorage.removeItem("desktop_windows")

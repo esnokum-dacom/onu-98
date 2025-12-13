@@ -326,16 +326,43 @@ body {
   image-rendering: pixelated;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   #Container-Center {
     width: 800px;
   }
 
-  #Fhead {
-    width: calc(80% + 250px);
-  }
   #SpotifySong {
     flex-direction: column;
     place-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #Container-Center {
+    width: 100%;
+    flex-direction: column;
+    place-items: center;
+    margin: auto;
+  }
+  #ContainerAll{
+    width: 800px;
+    margin: auto;
+    place-items: center;
+  }
+  #RightSide{
+    width: 100%;
+  }
+  .Others {
+    width: 100%;
+    margin: 10px auto;
+  }
+  #Titles{
+    display: none;
+  }
+  #Fhead {
+      width: 98%;
+  }
+  .CdocAb {
+    width: 100%;
   }
 }
