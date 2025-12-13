@@ -34,7 +34,7 @@ body {
   background-size: cover;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: -2;
 }
 
@@ -47,7 +47,7 @@ body {
 
 #container-Objects {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #taskbar {
@@ -799,7 +799,7 @@ body {
   position: absolute;
   top: 0px;
   width: 100vw;
-  height: 94vh;
+  height: 94dvh;
   place-self: center;
   z-index: 2;
 }
@@ -808,7 +808,7 @@ body {
   position: absolute;
   top: 0px;
   width: 100vw;
-  height: 94vh;
+  height: 94dvh;
   place-self: center;
   pointer-events: none;
   z-index: -1;
