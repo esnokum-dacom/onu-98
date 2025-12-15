@@ -6,14 +6,15 @@ function makeDraggable(element, storageKey) {
 
   const posGuardada = JSON.parse(localStorage.getItem(storageKey));
   document.addEventListener("DOMContentLoaded", () => {
-    if (posGuardada) { 
-        element.style.left = posGuardada.left + "%";
-        element.style.top = posGuardada.top + "%"; 
-  }})
+    if (posGuardada) {
+      element.style.left = posGuardada.left + "%";
+      element.style.top = posGuardada.top + "%";
+    }
+  })
 
-  if (posGuardada) { 
+  if (posGuardada) {
     element.style.left = posGuardada.left + "%";
-    element.style.top = posGuardada.top + "%"; 
+    element.style.top = posGuardada.top + "%";
   }
 
   element.style.touchAction = "none";
@@ -65,6 +66,7 @@ function makeDraggable(element, storageKey) {
 }
 
 const icon = document.getElementById("IconBack");
+const iconBooks = document.getElementById("IconBooks");
 const iconXp = document.getElementById("IconBackXp");
 
 let XpWindows = true
@@ -149,6 +151,39 @@ function ifcreenMQ(e) {
 }
 
 ifcreenMQ(mq);
+
+function BookIco(e) {
+  makeDraggable(iconBooks, "IconBookPos");
+  if (e.matches) {
+    if (iconBooks) {
+      iconBooks.addEventListener("click", () => {
+        if (XpWindows) {
+          CreateWid(iconBooks, "About Onu", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+        }
+        else {
+          CreateWid(iconBooks, "About Onu", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
+        }
+      }
+      )
+    }
+  }
+  else {
+    if (iconBooks) {
+      makeDraggable(iconBooks, "IconBookPos");
+      iconBooks.addEventListener("dblclick", () => {
+        if (XpWindows) {
+          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+        }
+        else {
+          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600");
+        }
+      }
+      )
+    }
+  }
+}
+
+BookIco(mq)
 
 function WindowsXPStyle() {
   XpWindows = false
