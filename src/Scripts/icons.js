@@ -79,7 +79,7 @@ function ifScreenMQ(e) {
     if (icon) {
       icon.addEventListener("click", () => {
         if (XpWindows) {
-          CreateWid(icon, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+          CreateWid(icon, "About Onu", "/wxp/MYPUS.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
         else {
           CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
@@ -93,7 +93,7 @@ function ifScreenMQ(e) {
       makeDraggable(icon, "IconBackPos");
       icon.addEventListener("dblclick", () => {
         if (XpWindows) {
-          CreateWid(icon, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+          CreateWid(icon, "About Onu", "/wxp/MYPUS.ico", "/src/Cont/AboutPc/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
         else {
           CreateWid(icon, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, "330", "500");
