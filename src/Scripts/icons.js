@@ -158,10 +158,10 @@ function BookIco(e) {
     if (iconBooks) {
       iconBooks.addEventListener("click", () => {
         if (XpWindows) {
-          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+          CreateWid(iconBooks, "Books", "/wxp/Bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
         else {
-          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
+          CreateWid(iconBooks, "Books", "/wxp/Bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
         }
       }
       )
@@ -172,10 +172,10 @@ function BookIco(e) {
       makeDraggable(iconBooks, "IconBookPos");
       iconBooks.addEventListener("dblclick", () => {
         if (XpWindows) {
-          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+          CreateWid(iconBooks, "Books", "/wxp/Bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
         else {
-          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600");
+          CreateWid(iconBooks, "Books", "/wxp/Bloc.ico", "/src/Cont/Books/index.html", null, "900", "600");
         }
       }
       )

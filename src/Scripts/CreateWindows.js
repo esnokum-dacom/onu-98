@@ -30,19 +30,19 @@ explHome.addEventListener("click", () => {
 BooksHome.addEventListener("click", () => {
   if (mq.matches) {
     if (XpWindows) {
-      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+      CreateWid(BooksHome, "Books", "/wxp/Bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
     }
     else {
-      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
+      CreateWid(BooksHome, "Books", "/wxp/Bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
     }
 
   }
   else {
     if (XpWindows) {
-      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+      CreateWid(BooksHome, "Books", "/wxp/Bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
     }
     else {
-      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "900", "600");
+      CreateWid(BooksHome, "Books", "/wxp/Bloc.ico", "/src/Cont/AboutPc/index.html", null, "900", "600");
     }
   }
   document.getElementById("PanelTBMXp").className = "MenuCl"
@@ -51,7 +51,7 @@ BooksHome.addEventListener("click", () => {
 
 mypc.addEventListener("click", () => {
   if (XpWindows) {
-    CreateWid(mypc, "About Onu", "/wxp/IEX.ico", "/src/Cont/AboutPc/index.html", null, 330, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
+    CreateWid(mypc, "About Onu", "/wxp/MYPUS.ico", "/src/Cont/AboutPc/index.html", null, 330, 500, { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" })
   }
   else {
     CreateWid(mypc, "About Onu", "My pc.png", "/src/Cont/AboutPc/index.html", null, 330, 500)
