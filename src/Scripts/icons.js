@@ -158,10 +158,10 @@ function BookIco(e) {
     if (iconBooks) {
       iconBooks.addEventListener("click", () => {
         if (XpWindows) {
-          CreateWid(iconBooks, "About Onu", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
         }
         else {
-          CreateWid(iconBooks, "About Onu", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
+          CreateWid(iconBooks, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
         }
       }
       )

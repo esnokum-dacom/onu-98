@@ -1,8 +1,10 @@
 import CreateWid from "./WidOther.js";
 import { XpWindows } from "./icons.js";
 
+const mq = window.matchMedia("(max-width: 600px)");
 const IntExplorer = document.getElementById("IconAbXp")
 const explHome = document.querySelector(".intab")
+const BooksHome = document.querySelector(".BooksIn")
 const mypc = document.querySelector(".MPtab")
 
 IntExplorer.addEventListener("click", () => {
@@ -25,6 +27,27 @@ explHome.addEventListener("click", () => {
   document.getElementById("MenuTriggerOn").id = "MenuTriggerOff"
 })
 
+BooksHome.addEventListener("click", () => {
+  if (mq.matches) {
+    if (XpWindows) {
+      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "330", "500", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+    }
+    else {
+      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "330", "500");
+    }
+
+  }
+  else {
+    if (XpWindows) {
+      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/Books/index.html", null, "900", "600", { windowOn: "NXPWindow", windowOff: "NXPWindowOff", windowInac: "NXPWindowINC", tBarOn: "NXPBarOn", tBarOff: "NXPBarOff", webOn: "webXPOs", ButtonM: "ButtonX", ButtonX: "ButtonC", ButImgX: "IconXP", ButImgM: "IconMP", appTab: "TbWinXp", windowMax: "NXPWindowMAX" });
+    }
+    else {
+      CreateWid(BooksHome, "Books", "/wxp/bloc.ico", "/src/Cont/AboutPc/index.html", null, "900", "600");
+    }
+  }
+  document.getElementById("PanelTBMXp").className = "MenuCl"
+  document.getElementById("MenuTriggerOn").id = "MenuTriggerOff"
+})
 
 mypc.addEventListener("click", () => {
   if (XpWindows) {
