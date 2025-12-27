@@ -199,13 +199,14 @@ export default function CreateWid(Trigger, NameApp, IconApp, PageApp, savedData 
   TbWin.appendChild(nWind);
 
   IconMX.addEventListener("click", () => {
-    if (win.className == ClassSt.windowMax) {
+    if (win.className === ClassSt.windowMax) {
       win.className = ClassSt.windowOn
       maxim = false
     }
     else {
       win.className = ClassSt.windowMax
       maxim = true
+      focusWindow(win, NavWindow, ClassSt, PointerAr);
     }
     saveCurrentState();
   })
