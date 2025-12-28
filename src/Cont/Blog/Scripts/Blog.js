@@ -18,10 +18,6 @@ async function GetMediaLog() {
         const ContainerMusic = document.getElementById("ContainerMusic")
         ContainerImgs.append(ContainerMusic)
 
-        const serpr = document.createElement("div");
-        serpr.className = "sepC"
-        ContainerMusic.appendChild(serpr)
-
         const InterContainer = document.createElement("div")
         InterContainer.className = "PostMedia"
         ContainerMusic.append(InterContainer)
@@ -95,10 +91,6 @@ async function GetMediaLog() {
         InterContainer.className = "PostMedia"
         ContainerAnimes.append(InterContainer)
 
-        const serpr = document.createElement("div");
-        serpr.className = "sepC"
-        ContainerAnimes.appendChild(serpr)
-
         const RContainer = document.createElement("div")
         RContainer.className = "CdocAb"
         InterContainer.append(RContainer)
@@ -163,10 +155,6 @@ async function GetMediaLog() {
       .forEach(media => {
         const ContainerSerie = document.getElementById("ContainerSeries")
         ContainerImgs.append(ContainerMusic)
-
-        const serpr = document.createElement("div");
-        serpr.className = "sepC"
-        ContainerSerie.append(serpr)
 
         const InterContainer = document.createElement("div")
         InterContainer.className = "PostMedia"
