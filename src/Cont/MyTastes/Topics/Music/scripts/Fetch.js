@@ -73,7 +73,9 @@ async function GetAlbumILV() {
 
     const data = await response.json();
 
-    console.log(data)
+    const imageUR = fetch(data.album.albumart)
+
+    console.log(imageUR)
 
     data.album.sort((a, b) => b.id + a.id)
       .forEach(alb => {
