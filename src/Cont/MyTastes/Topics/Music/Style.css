@@ -1,4 +1,4 @@
-@import url("/src/Props/fonts/fonts.css");
+@import url("../../../Props/Fonts/fonts.css");
 
 :root {
   --primary-color: rgb(224, 224, 224);
